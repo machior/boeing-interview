@@ -1,0 +1,15 @@
+{
+  "userId": 1,
+  "items": [
+    {
+      "id": 0,
+      "title": "Pierwszy tytuł",
+      "content": "jakiś tam kontent"
+    },
+    {
+      "id": 1,
+      "title": "Drugi tytuł",
+      "content": "drugi kontent"
+    }
+  ]
+}

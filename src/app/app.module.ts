@@ -8,6 +8,7 @@ import {UserModule} from './user/user.module';
 import {EffectsModule} from '@ngrx/effects';
 import {reducer} from './user/store/users.reducer';
 import {FormsModule} from '@angular/forms';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {FormsModule} from '@angular/forms';
     UserModule,
     FormsModule,
     StoreModule.forRoot({ users: reducer }, {}),
+    StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
   ],
   providers: [],

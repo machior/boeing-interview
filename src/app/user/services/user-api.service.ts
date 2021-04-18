@@ -11,7 +11,7 @@ export class UserApiService {
   constructor(private httpService: HttpClient) {
   }
 
-  getUsers(): Observable<User[]> {
-    return this.httpService.get<User[]>('../../../assets/mocks/users.json');
+  getUsers(): Observable<{ users: User[] }> {
+    return this.httpService.get<{ users: User[] }>('../../../assets/mocks/users.json');
   }
 }

@@ -10,17 +10,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  users: {
-    1: {
-      id: 1,
-      name: 'User1'
-    },
-    2: {
-      id: 2,
-      name: 'User2'
-
-    }
-  },
+  users: {},
   currentUserId: 1
 };
 
@@ -28,7 +18,7 @@ export const initialState: State = {
 export const reducer = createReducer(
   initialState,
 
-  on(UsersActions.loadUserSuccess, (state, {users}) => ({
+  on(UsersActions.loadUserSuccess, (state, users) => ({
     ...state,
     users
   })),
@@ -38,4 +28,3 @@ export const reducer = createReducer(
     currentUserId: id,
   }))
 );
-

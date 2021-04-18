@@ -1,5 +1,16 @@
-<ul *ngIf="userItems$ | async as userItems">
-  <li *ngFor="let userItem of userItems.items">
-    {{ userItem.title }}
-  </li>
-</ul>
+<table *ngIf="userItems$ | async as userItems" class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col-1">#</th>
+      <th scope="col-2">Title</th>
+      <th scope="col-9">Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let userItem of userItems.items">
+      <th scope="row">{{ userItem.id }}</th>
+      <td>{{ userItem.title }}</td>
+      <td>{{ userItem.content }}</td>
+    </tr>
+  </tbody>
+</table>

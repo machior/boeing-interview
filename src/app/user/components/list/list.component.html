@@ -1,1 +1,5 @@
-<p>list works!</p>
+<ul *ngIf="userItems$ | async as userItems">
+  <li *ngFor="let userItem of userItems.items">
+    {{ userItem.title }}
+  </li>
+</ul>

@@ -3,7 +3,8 @@ import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { Store } from '@ngrx/store';
 import { loadUsers, switchUser } from '../store/users.actions';
-import { selectCurrentUser, selectUsers } from '../store/users.selectors';
+import { selectCurrentUser, selectUserList, selectUsers } from '../store/users.selectors';
+import { List } from '../models/list.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +30,6 @@ export class UserService {
   getCurrentUser(): Observable<User> {
     return this.store.select(selectCurrentUser);
   }
+
+  selectUserList$ = (userId: number): Observable<List> => this.store.select(selectUserList(userId));
 }

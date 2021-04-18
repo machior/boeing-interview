@@ -10,6 +10,10 @@ export const selectUsers = createSelector(
   state => Object.values(state.users),
 );
 
+export const selectUserList = (userId: number) =>
+  createSelector(selectUserstate, state => state.usersLists.find(userList => userList.userId === userId));
+
+
 export const selectCurrentUser = createSelector(
   selectUserstate,
   state => state.users[state.currentUserId]

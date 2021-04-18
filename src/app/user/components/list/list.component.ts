@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { List } from '../../models/list.model';
 import { User } from '../../models/user.model';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-list',
@@ -9,9 +12,12 @@ import { User } from '../../models/user.model';
 export class ListComponent implements OnInit {
   @Input() selectedUser: User;
 
-  constructor() { }
+  constructor(private readonly userService: UserService) { }
 
   ngOnInit(): void {
   }
 
+  get userItems$(): Observable<List> {
+    return this.userService.selectUserList$(this.selectedUser.id);
+  }
 }

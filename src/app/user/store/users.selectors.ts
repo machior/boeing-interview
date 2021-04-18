@@ -11,7 +11,7 @@ export const selectUsers = createSelector(
 );
 
 export const selectUserList = (userId: number) =>
-  createSelector(selectUserstate, state => state.usersLists.find(userList => userList.userId === userId));
+  createSelector(selectUserstate, state => state.usersLists?.find(userList => userList.userId === userId)) ?? null;
 
 
 export const selectCurrentUser = createSelector(

@@ -1,3 +1,5 @@
+<button (click)="sorted = !sorted">{{ sortButtonText }}</button>
+
 <table *ngIf="userItems$ | async as userItems" class="table table-dark">
   <thead>
     <tr>
@@ -7,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let userItem of userItems.items">
+    <tr *ngFor="let userItem of fixedUserItems(userItems.items)">
       <th scope="row">{{ userItem.id }}</th>
       <td>{{ userItem.title }}</td>
       <td>{{ userItem.content }}</td>

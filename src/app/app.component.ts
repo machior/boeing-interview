@@ -13,7 +13,9 @@ export class AppComponent implements OnInit {
     'listItem3',
   ];
 
-  constructor(public userService: UserService) {
+  currentUser$ = this.userService.getCurrentUser();
+
+  constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {

@@ -5,13 +5,15 @@ import { EffectsModule } from '@ngrx/effects';
 import { UsersEffects } from './store/users.effects';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { ListComponent } from './components/list/list.component';
 
 
 
 @NgModule({
-  declarations: [UserSwitchComponent],
+  declarations: [UserSwitchComponent, ListComponent],
   exports: [
-    UserSwitchComponent
+    UserSwitchComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,

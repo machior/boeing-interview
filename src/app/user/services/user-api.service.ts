@@ -12,8 +12,6 @@ export class UserApiService {
   }
 
   getUsers(): Observable<User[]> {
-    // use user.json file and httpService
-
-    return of([]);
+    return this.httpService.get<User[]>('../../../assets/mocks/users.json');
   }
 }

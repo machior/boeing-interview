@@ -12,7 +12,10 @@ export class UserService {
 
   constructor(
     private store: Store,
-  ) {
+  ) {}
+
+  loadUsers(): void {
+    this.store.dispatch(loadUsers());
   }
 
   getUsers(): Observable<User[]> {

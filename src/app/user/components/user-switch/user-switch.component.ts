@@ -12,6 +12,8 @@ export class UserSwitchComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
+  currentUser$ = this.userService.getCurrentUser();
+
   ngOnInit(): void {
     this.userService.getUsers()
       .subscribe((users) => this.users = users);

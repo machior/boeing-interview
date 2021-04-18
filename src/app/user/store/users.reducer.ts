@@ -20,7 +20,8 @@ export const reducer = createReducer(
 
   on(UsersActions.loadUserSuccess, (state, users) => ({
     ...state,
-    users
+    users,
+    currentUserId: 1
   })),
 
   on(UsersActions.switchUser, (state, {id}) => ({

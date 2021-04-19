@@ -41,7 +41,11 @@ export class ListComponent implements OnInit {
   }
 
   addItem(): void {
-    console.log(this.addItemForm);
+    this.userService.addItemToUserList({
+      id: this.selectedUser.id,
+      content: this.addItemForm.value['content'],
+      title: this.addItemForm.value['title'],
+    });
   }
 
   get userItems$(): Observable<List> {

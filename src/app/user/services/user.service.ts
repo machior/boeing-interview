@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { Store } from '@ngrx/store';
-import { loadUsers, switchUser } from '../store/users.actions';
+import { addItemToUserList, loadUsers, switchUser } from '../store/users.actions';
 import { selectCurrentUser, selectUserList, selectUsers } from '../store/users.selectors';
 import { List } from '../models/list.model';
 
@@ -32,4 +32,8 @@ export class UserService {
   }
 
   selectUserList$ = (userId: number): Observable<List> => this.store.select(selectUserList(userId));
+
+  addItemToUserList({id, content, title}: {id: number, content: string, title: string}): void {
+    this.store.dispatch(addItemToUserList({ id, content, title }));
+  }
 }

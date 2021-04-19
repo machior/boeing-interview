@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { List, ListItem } from '../../models/list.model';
 import { User } from '../../models/user.model';
@@ -13,8 +14,12 @@ export class ListComponent implements OnInit {
   @Input() selectedUser: User;
 
   sorted = false;
+  addItemForm: FormGroup = this.fb.group({
+    title: '',
+    content: ''
+  });
 
-  constructor(private readonly userService: UserService) { }
+  constructor(private readonly userService: UserService, private readonly fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +38,10 @@ export class ListComponent implements OnInit {
         );
 
     return itemsCopy;
+  }
+
+  addItem(): void {
+    console.log(this.addItemForm);
   }
 
   get userItems$(): Observable<List> {

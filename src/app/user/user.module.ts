@@ -4,7 +4,7 @@ import { UserSwitchComponent } from './components/user-switch/user-switch.compon
 import { EffectsModule } from '@ngrx/effects';
 import { UsersEffects } from './store/users.effects';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ListComponent } from './components/list/list.component';
 
 
@@ -19,7 +19,8 @@ import { ListComponent } from './components/list/list.component';
     CommonModule,
     HttpClientModule,
     EffectsModule.forFeature([UsersEffects]),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

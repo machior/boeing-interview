@@ -16,3 +16,13 @@
     </tr>
   </tbody>
 </table>
+
+<form [formGroup]="addItemForm" (ngSubmit)="addItem()" class="form">
+  <label for="title">Tytuł:</label>
+  <input id="title" type="text" [formControlName]="'title'" />
+  <br/>
+  <label for="content">Content:</label>
+  <input id="content" type="text" [formControlName]="'content'" />
+  <br/>
+  <button type="submit">Add new item</button>
+</form>
